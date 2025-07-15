@@ -56,8 +56,8 @@
 &kp F1  &kp F2  &kp F3  &kp F4     &kp F5      &kp F6       &kp F7     &kp F8          &kp F9          &kp F10          &kp F11           &kp F12
 &trans  &none   &none   &none      &none       &trans       &kp GRAVE  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp MINUS         &kp EQUAL
 &trans  &none   &none   &none      &none       &trans       &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans  &trans  &trans  &trans     &trans      &none        &none      &kp HOME        &trans          &kp END          &none             &To0_macro
-                        &mkp LCLK  &To0_macro  &mkp LCLK    &mkp LCLK  &mkp RCLK
+&trans  &trans  &trans  &trans     &trans      &none        &none      &kp HOME        &trans          &kp END          &none             &none
+                        &mkp LCLK  &To0_macro  &mkp RCLK    &mkp LCLK  &mkp RCLK
                                    &trans      &trans       &trans
             >;
         };
