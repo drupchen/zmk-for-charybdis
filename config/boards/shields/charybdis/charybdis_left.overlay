@@ -36,7 +36,9 @@
 
 &spi3 {
     compatible = "nordic,nrf-spim";
-    status = "okay";
+    /* Disabled: no RGB fitted. See note in charybdis_right.overlay —
+     * SPIM3 draws ~900 uA even idle (nRF52840 anomaly 195). */
+    status = "disabled";
 
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
