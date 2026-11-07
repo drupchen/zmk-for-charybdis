@@ -9,9 +9,13 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+    # Pinned so an upstream commit cannot silently change pointer behaviour
+    # between builds. This is the tip of main as of 2024-04-13; bump it
+    # deliberately when you want to pick up driver changes.
     - name: zmk-pmw3610-driver
       remote: DoctorWangWang
-      revision: main
-      
+      revision: 1d9c2c68ca76012e1b1e5f6ef02fa5eadc4ca399
+
+
   self:
     path: config
