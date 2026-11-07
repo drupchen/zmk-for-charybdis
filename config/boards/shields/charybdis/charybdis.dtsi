@@ -77,19 +77,12 @@
         zmk,physical-layouts = &charybdis_layout;
 	zmk,underglow = &led_strip;
 
-        /* Read the battery from the nRF52840's own VDDH pin instead of the
-         * board's resistor divider. The nice_nano_v2 board definition points
-         * zmk,battery at a divider on an analog pin, but this ProMicro clone
-         * does not expose one that is both wired and free — P0.24 is a matrix
-         * row here. VDDH needs no pin and no calibration.
-         *
-         * Caveat: the reading tracks the supply, so it reads high (and the
-         * percentage is meaningless) while USB is plugged in. */
-        zmk,battery = &vddh;
-    };
-
-    vddh: vddh {
-        compatible = "zmk,battery-nrf-vddh";
+        /* No zmk,battery here on purpose. The nice_nano_v2 board definition
+         * already provides vbatt with compatible "zmk,battery-nrf-vddh" and
+         * chooses it, which reads the nRF52840's own VDDH supply and needs no
+         * pin and no calibration. Adding a second node with that compatible
+         * makes it instance 1, and the driver only defines instance 0, so the
+         * build fails to link. */
     };
 
     default_transform: keymap_transform_0 {
