@@ -80,7 +80,12 @@
 
 &spi3 {
     compatible = "nordic,nrf-spim";
-    status = "okay";
+    /* Disabled: no RGB fitted. spi3 is SPIM3, which has nRF52840 anomaly 195
+     * ("SPIM3 continues to draw current after disable") and costs ~900 uA
+     * even idle. Commenting out the RGB Kconfig is not enough — the
+     * devicetree node must be disabled too. Set back to "okay" if LEDs are
+     * ever fitted. */
+    status = "disabled";
 
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
